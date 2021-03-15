@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检查类型</title>
+    <script src="../../src/object/myInstanceOf.js"></script>
+</head>
+<body>
+    <script>
+        //声明一个构造函数
+        function Person(){}
+        
+        let p = new Person;
+
+        //检测
+        // console.log(p instanceof Person);
+
+        // console.log(myInstanceOf(p, Person));
+        // console.log(myInstanceOf(p, Object));
+        // console.log(myInstanceOf(Person, Object));
+        // console.log(myInstanceOf(Person, Function));
+        console.log(myInstanceOf(p, Function));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流测试</title>
+    <script src="../../src/function/throttle.js"></script>
+    <style>
+        body{
+            height:2000px;
+            background:linear-gradient(#125, #eae);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //绑定滚动事件
+        // window.addEventListener('scroll', function(){
+        //     console.log(Date.now());
+        // });
+
+        window.addEventListener('scroll', throttle(function(e){
+            // console.log(Date.now());
+            console.log(e);
+        }, 500));
+    </script>
+</body>
+</html>

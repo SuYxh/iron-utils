@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件绑定</title>
+    <style>
+        body{
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            border-radius: 50%;
+        }
+        #outter{
+            width:200px;
+            height:200px;
+            background:#89c;
+            position:relative;
+        }
+        #inner{
+            width:100px;
+            height:100px;
+            background:rgb(153, 106, 34);
+            position:absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outter">
+        <div id="inner">
+
+        </div>
+    </div>
+
+    <script>
+        //获取元素
+        let outter = document.querySelector('#outter');
+        let inner = document.querySelector('#inner');
+
+        outter.addEventListener('click', function(){
+            console.log('捕获 outter');
+        }, true);
+
+        inner.addEventListener('click', function(){
+            console.log('捕获 inner');
+        }, true);
+
+        outter.addEventListener('click', function(){
+            console.log('冒泡 outter');
+        });
+
+        inner.addEventListener('click', function(){
+            console.log('冒泡 inner');
+        });
+
+    </script>
+</body>
+</html>
