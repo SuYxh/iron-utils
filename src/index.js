@@ -52,3 +52,14 @@ export { PubSub } from './pub-sub';
 
 //字符串
 export { reverseString, palindrome, truncate } from './string/index';
+
+
+// 数据结构
+export { Stack } from './data-structure/stack/stack';
+export { Queue } from './data-structure/queue/queue';
+export { PriorityQueue } from './data-structure/queue/priorityQueue';
+
+
+// 工具函数
+
+export { uuid } from './utils/index'

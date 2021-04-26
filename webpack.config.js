@@ -16,4 +16,25 @@ module.exports = {
     // 打包生成库可以通过esm/commonjs/reqirejs的语法引入
     libraryTarget: 'umd',
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: "defaults" }]
+            ],
+            plugins: [
+              ["@babel/plugin-proposal-decorators", { "legacy": true }],   // 解析类的装饰器
+              ["@babel/plugin-proposal-class-properties", { "loose": true }],  // 转化类的高级语法
+              "@babel/plugin-transform-runtime"    // js语法检测及校验
+            ]
+          }
+        },
+        include: path.resolve(__dirname, 'src'),
+      },
+    ]
+  }
 }
