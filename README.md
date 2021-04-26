@@ -49,7 +49,29 @@ document.getElementById('handle').onclick = handleClick
 document.getElementById('throttle').onclick = xUtils.throttle(handleClick, 2000)
 ```
 
+### 日期处理
 
+1、`dateFormat()`  待验证
+
+2、`TimeFormat()  `   待验证
+
+3、`getDate()`    待验证
+
+
+
+### 校验规则
+
+1、校验手机号码： `isPhone()`
+
+2、检验车牌号：`isCarNum()`
+
+3、检验身份证号码：`isIdentityCard()`  (**身份证合法返回 ''(String) ,不合法返回错误信息(String)**)
+
+4、判断输入框是否有表情：`isEmojiCharacter()`
+
+5、邮箱验证 `isEmail()`
+
+6、URL验证 `isURL()`
 
 ### 数据结构
 
@@ -61,6 +83,80 @@ document.getElementById('throttle').onclick = xUtils.throttle(handleClick, 2000)
 - `isEmpty()` 如果栈里没有任何元素就返回 `true`，否则返回 `false`。
 - `size()` 返回栈里的元素个数。这个方法和数组的 `length` 属性类似。
 - `toString()` 将栈结构的内容以字符串的形式返回。
+
+```js
+const { Stack } = require('iron-utils')
+const stack = new Stack();
+
+// push() 测试
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log(stack.items); //--> [1, 2, 3]
+
+// pop() 测试
+console.log(stack.pop()); //--> 3
+
+// peek() 测试
+console.log(stack.firstElement()); //--> 2
+
+// isEmpty() 测试
+console.log(stack.isEmpty()); //--> false
+
+// size() 测试
+console.log(stack.size()); //--> 2
+
+// toString() 测试
+console.log(stack.toString()); //--> 1 2
+```
+
+
+
+#### 2、队列
+
+##### **普通队列**
+
+- `enqueue(element)` 向队列尾部添加一个（或多个）新的项。
+- `dequeue()` 移除队列的第一（即排在队列最前面的）项，并返回被移除的元素。
+- `firstElement()` 返回队列中的第一个元素——最先被添加，也将是最先被移除的元素。队列不做任何变动（不移除元素，只返回元素信息与 Map 类的 peek 方法非常类似）。
+- `isEmpty()` 如果队列中不包含任何元素，返回 true，否则返回 false。
+- `size()` 返回队列包含的元素个数，与数组的 length 属性类似。
+- `toString()` 将队列中的内容，转成字符串形式。
+
+```js
+const { Queue } = require('iron-utils')
+const priorityQueue = new Queue();
+
+// enqueue() 测试
+queue.enqueue("a");
+queue.enqueue("b");
+queue.enqueue("c");
+queue.enqueue("d");
+console.log(queue.items); //--> ["a", "b", "c", "d"]
+
+// dequeue() 测试
+queue.dequeue();
+queue.dequeue();
+console.log(queue.items); //--> ["c", "d"]
+
+// front() 测试
+console.log(queue.firstElement()); //--> c
+
+// isEmpty() 测试
+console.log(queue.isEmpty()); //--> false
+
+// size() 测试
+console.log(queue.size()); //--> 2
+
+// toString() 测试
+console.log(queue.toString()); //--> c d
+```
+
+
+
+##### **优先队列**
+
+> 优先队列继承普通队列
 
 ```js
 const { PriorityQueue } = require('iron-utils')
@@ -101,11 +197,16 @@ console.log(priorityQueue.toString()); //--> B-15 E-18 D-20
 
 
 
-2、队列
+### 工具函数
 
+1、`uuid()`
 
+2、`toType()`
 
+3、`param2Obj() ` 
 
+4、`testMobileType()`
 
+5、`dealImage()`
 
-
+6、`getImgData()`

@@ -61,5 +61,10 @@ export { PriorityQueue } from './data-structure/queue/priorityQueue';
 
 
 // 工具函数
+export { uuid, toType, param2Obj, testMobileType, dealImage, getImgData } from './utils/index'
 
-export { uuid } from './utils/index'
+// 日期处理
+export { dateFormat, TimeFormat, getDate } from './utils/date'
+
+// 校验规则
+export { isPhone, isCarNum, isIdentityCard, isEmojiCharacter, isEmail, isURL } from './rules/index'
