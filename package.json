@@ -1,12 +1,16 @@
 {
   "name": "iron-utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "前端-自定义工具函数库",
   "main": "dist/x-utils.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:watch": "webpack --watch",
     "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SuYxh/iron-utils.git"
   },
   "keywords": [
     "utils",

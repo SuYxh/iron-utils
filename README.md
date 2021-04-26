@@ -1,6 +1,12 @@
 ## iron-utils
 
 > 前端常用工具库
+> 
+> 涵盖开发过程过程中的常用工具函数、验证规则、常用CSS样式、设计模式范例、封装常用数据结构等！
+> 
+> 项目将会长期维护、持续更新！更多详情请查看手册： https://utilsdoc.ironc.cn/ 
+> 
+> 项目正在努力建设中！！！！！！！
 
 
 
@@ -210,3 +216,10 @@ console.log(priorityQueue.toString()); //--> B-15 E-18 D-20
 5、`dealImage()`
 
 6、`getImgData()`
+
+
+
+### 联系方式
+
+![](http://qn.huat.xyz/content/20210426224404.jpg)
+![](http://qn.huat.xyz/content/20210426224453.jpg)
