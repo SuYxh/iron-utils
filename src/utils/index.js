@@ -1,7 +1,7 @@
 /*
  * @Author: 时光@
  * @Date: 2021-04-26 14:43:16
- * @LastEditTime: 2021-04-26 22:23:23
+ * @LastEditTime: 2021-05-09 14:33:35
  * @Description:
  */
 
@@ -207,4 +207,78 @@ export function getImgData(img, dir, next) {
     next(canvas.toDataURL('image/jpeg', 0.8))
   }
   image.src = img
+}
+
+
+/**
+ * @author: 时光@
+ * @description: 判断是否为合法的url
+ * @param {*} URL
+ * @return {*}
+ */
+export const checkUrl = (URL) => {
+  var str = URL,
+    Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/,
+    objExp = new RegExp(Expression);
+  if (objExp.test(str) == true) {
+    return true
+  } else {
+    return false
+  }
+}
+
+/**
+ * @author: 时光@
+ * @description: 获取url参数
+ * @param {*} url
+ * @param {*} type ，默认为 object ,如果是 string 则返回 string 类型的参数
+ * @return {*} 
+ */
+export const getUrlParam = (url, type = "object") => {
+  const paramsObj = {}
+  const paramsStr = url.slice(url.indexOf("?") + 1, url.length - 1)
+  const paramsArr = paramsStr.split("&")
+  for (let i = 0; i < paramsArr.length; i++) {
+    const keyValueArr = paramsArr[i].split("=")
+    paramsObj[keyValueArr[0]] = keyValueArr[1]
+  }
+  if (type === "object") {
+    // 返回对象
+    return paramsObj
+
+  } else {
+    // 返回 string
+    return paramsStr
+  }
+}
+
+
+
+/**
+ * @author: 时光@
+ * @description: 获取URL的参数并转成对象
+ * @param {*} url
+ * @return {*}
+ */
+export const urlParametersToObj = url =>
+  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+    {}
+  );
+
+
+
+/**
+ * @author: 时光@
+ * @description: 将对象转换成url格式
+ * @param {*} obj
+ * @return {*}
+ */
+export const objToUrlString = (obj) => {
+  if (typeof obj !== "object" || obj == null) {
+    throw new Error(`${obj} must be an objcet`)
+  }
+  const data = []
+  Object.keys(obj).forEach(key => data.push(`${key}=${obj[key]}`))
+  return data.join("&")
 }

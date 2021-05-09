@@ -26,13 +26,27 @@
             xUtils.test()
             console.log(xUtils.uuid(16))
             console.log(xUtils);
-            console.log(xUtils.toType({}));
-            console.log(xUtils.param2Obj(url));
-            console.log(xUtils.testMobileType());
-            console.log(xUtils.isPhone('18372635819'));
-            console.log(xUtils.isCarNum('京AF0236'));
-            console.log(!xUtils.isIdentityCard("42068419980426751X"));
-            console.log(xUtils.isIdentityCard("3701241996100925"));
+            // console.log(xUtils.toType({}));
+            // console.log(xUtils.param2Obj(url));
+            // console.log(xUtils.testMobileType());
+            // console.log(xUtils.isPhone('18372635819'));
+            // console.log(xUtils.isCarNum('京AF0236'));
+            // console.log(!xUtils.isIdentityCard("42068419980426751X"));
+            // console.log(xUtils.isIdentityCard("3701241996100925"));
+
+            const url2 = "http://localhost:8080/?token=rTyJ7bcRb7KU4DMcWo4216&roleId=512213631174180864"
+
+            const url3 = "http://localhost:8080/#/?name=rTyJ7&appId=512213631174180864"
+
+            console.log(xUtils.getUrlParam(url2));
+
+
+            const params = { a: 1, b: 2 }
+            console.log(xUtils.objToUrlString(params));
+
+
+            // console.log(xUtils.urlParametersToObj(url3));
+            // console.log(xUtils.urlParametersToObj(url2));
 
 
 
