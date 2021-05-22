@@ -1,7 +1,7 @@
 /*
  * @Author: 时光@
  * @Date: 2021-04-26 14:43:16
- * @LastEditTime: 2021-05-09 15:08:20
+ * @LastEditTime: 2021-05-23 00:14:27
  * @Description:
  */
 
@@ -329,3 +329,151 @@ export const jsonp = ({ url, params, callbackName }) => {
   });
 }
 
+
+// 检测是否为函数/window
+export const isFunction = (obj) => {
+  return typeof obj === "function" && typeof obj.nodeType !== "number";
+};
+
+// 检测是否为window
+export const isWindow = (obj) => {
+  return obj != null && obj === obj.window;
+};
+
+
+
+// 检测是否为数据或者类数组
+export const isArrayLike = (obj) => {
+  let length = !!obj && "length" in obj && obj.length,
+    type = toType(obj);
+  if (isFunction(obj) || isWindow(obj)) return false;
+  return type === "array" || length === 0 ||
+    typeof length === "number" && length > 0 && (length - 1) in obj;
+}
+
+// 遍历数组/类数组/对象
+export const each = (obj, callback) => {
+  callback = callback || Function.prototype;
+  if (isArrayLike(obj)) {
+    for (let i = 0; i < obj.length; i++) {
+      let item = obj[i],
+        result = callback.call(item, item, i);
+      if (result === false) break;
+    }
+    return obj;
+  }
+  for (let key in obj) {
+    if (!hasOwn.call(obj, key)) break;
+    let item = obj[key],
+      result = callback.call(item, item, key);
+    if (result === false) break;
+  }
+  return obj;
+};
+
+// 判断是否为一个对象
+export const isObj = (value) => {
+  // 是否为普通对象
+  return toType(value) === "object";
+}
+
+// 对象合并
+/*
+ * 几种情况的分析
+ *   A->options中的key值  B->params中的key值
+ *   1.A&B都是原始值类型:B替换A即可
+ *   2.A是对象&B是原始值:抛出异常信息
+ *   3.A是原始值&B是对象:B替换A即可
+ *   4.A&B都是对象:依次遍历B中的每一项,替换A中的内容
+ */
+export const merge = (options, params = {}) => {
+  each(params, (_, key) => {
+    let isA = isObj(options[key]),
+      isB = isObj(params[key]);
+    if (isA && !isB) throw new TypeError(`${key} in params must be object`);
+    if (isA && isB) {
+      options[key] = merge(options[key], params[key]);
+      return;
+    }
+    options[key] = params[key];
+  });
+  return options;
+}
+
+
+// 浅克隆
+export const shadowClone = (obj) => {
+  if (obj == null) return obj
+  let type = toType(obj),
+    Ctor = obj.constructor;
+  if (/^(symbol|bigint)$/i.test(type)) return Object(obj);
+  if (/^(regexp|date)$/i.test(type)) return new Ctor(obj);
+  if (/^error$/i.test(type)) return new Ctor(obj.message);
+  if (/^function$/i.test(type)) {
+    return function () {
+      return obj.call(this, ...arguments);
+    };
+  }
+  if (/^(object|array)$/i.test(type)) {
+    let keys = [...Object.keys(obj), ...Object.getOwnPropertySymbols(obj)],
+      result = new Ctor();
+    each(keys, key => {
+      result[key] = obj[key];
+    });
+    return result;
+  }
+  return obj;
+}
+
+
+
+
+// 深克隆
+export const deepClone = (obj, cache = new Set()) => {
+  if (obj == null) return obj
+  let type = toType(obj),
+    Ctor = obj.constructor;
+  if (!/^(object|array)$/i.test(type)) return shallowClone(obj);
+  // 解决循环引用
+  if (cache.has(obj)) return obj;
+  cache.add(obj);
+  let keys = [
+    ...Object.keys(obj),
+    ...Object.getOwnPropertySymbols(obj)
+  ],
+    result = new Ctor();
+  each(keys, key => {
+    result[key] = deepClone(obj[key], cache);
+  });
+  return result;
+}
+
+
+
+//  转换成驼峰
+// "get-element-by-id" => getElementById
+
+export const transform2Hump = (str) => {
+  const result = []
+  const array = str.split("-")
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    const transformStr = i === 0 ? element : element.charAt(0).toLocaleUpperCase() + element.substring(1)
+    result.push(transformStr)
+  }
+  return result.join("")
+}
+
+
+//  
+export const isPromise = (value) => {
+  if ((typeof value === "object" && value != null) || typeof value === "function") {
+    if (typeof value.then === "function") {
+      return true
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+}

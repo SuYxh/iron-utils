@@ -61,7 +61,10 @@ export { PriorityQueue } from './data-structure/queue/priorityQueue';
 
 
 // 工具函数
-export { uuid, toType, param2Obj, testMobileType, dealImage, getImgData, checkUrl, getUrlParam, urlParametersToObj, objToUrlString } from './utils/index'
+export {
+    uuid, toType, param2Obj, testMobileType, dealImage, getImgData, checkUrl, getUrlParam, urlParametersToObj, objToUrlString,
+    isFunction, isWindow, isArrayLike, each, merge, transform2Hump, isPromise
+} from './utils/index'
 
 // 日期处理
 export { dateFormat, TimeFormat, getDate } from './utils/date'
