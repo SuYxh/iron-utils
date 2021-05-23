@@ -1,7 +1,7 @@
 /*
  * @Author: 时光@
  * @Date: 2021-04-26 14:43:16
- * @LastEditTime: 2021-05-23 00:14:27
+ * @LastEditTime: 2021-05-23 22:37:11
  * @Description:
  */
 
@@ -452,7 +452,6 @@ export const deepClone = (obj, cache = new Set()) => {
 
 //  转换成驼峰
 // "get-element-by-id" => getElementById
-
 export const transform2Hump = (str) => {
   const result = []
   const array = str.split("-")
@@ -465,7 +464,7 @@ export const transform2Hump = (str) => {
 }
 
 
-//  
+// 判断是否是promise
 export const isPromise = (value) => {
   if ((typeof value === "object" && value != null) || typeof value === "function") {
     if (typeof value.then === "function") {
@@ -476,4 +475,74 @@ export const isPromise = (value) => {
   } else {
     return false
   }
+}
+
+// 判断数组是不是一样的
+export const arrayEqual = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false
+  }
+  return true
+}
+
+
+// 判断两个对象是否一致
+export const compareObj = (A, B) => {
+  const keysA = Object.keys(A)
+  const keysB = Object.keys(B)
+
+  // 健长不一致的话就更谈不上相等了
+  if (keysA.length !== keysB.length) return false
+
+  for (let i = 0; i < keysA.length; i++) {
+    const key = keysA[i]
+
+    // 类型不等的话直接就不相等了
+    if (typeof A[key] !== typeof B[key]) return false
+
+    // 当都不是对象的时候直接判断值是否相等
+    if (typeof A[key] !== 'object' && typeof B[key] !== 'object' && A[key] !== B[key]) {
+      return false
+    }
+
+    if (Array.isArray(A[key]) && Array.isArray(B[key])) {
+      if (!arrayEqual(A[key], B[key])) return false
+    }
+
+    // 递归判断
+    if (typeof A[key] === 'object' && typeof B[key] === 'object') {
+      if (!compareObj(A[key], B[key])) return false
+    }
+  }
+
+  return true
+}
+
+
+// 判断对象是否存在循环引用
+export const isHasCircle = (obj) => {
+  let hasCircle = false
+  const map = new Map()
+
+  function loop(obj) {
+    const keys = Object.keys(obj)
+
+    keys.forEach(key => {
+      const value = obj[key]
+      if (typeof value == 'object' && value !== null) {
+        if (map.has(value)) {
+          hasCircle = true
+          return
+        } else {
+          map.set(value)
+          loop(value)
+        }
+      }
+    })
+
+  }
+  loop(obj)
+
+  return hasCircle
 }

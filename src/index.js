@@ -58,12 +58,15 @@ export { reverseString, palindrome, truncate } from './string/index';
 export { Stack } from './data-structure/stack/stack';
 export { Queue } from './data-structure/queue/queue';
 export { PriorityQueue } from './data-structure/queue/priorityQueue';
+export { dfs } from './data-structure/dfs/index';
+export { bfs } from './data-structure/bfs/index';
+
 
 
 // 工具函数
 export {
     uuid, toType, param2Obj, testMobileType, dealImage, getImgData, checkUrl, getUrlParam, urlParametersToObj, objToUrlString,
-    isFunction, isWindow, isArrayLike, each, merge, transform2Hump, isPromise
+    isFunction, isWindow, isArrayLike, each, merge, transform2Hump, isPromise, arrayEqual, compareObj, isHasCircle
 } from './utils/index'
 
 // 日期处理

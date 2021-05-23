@@ -48,7 +48,11 @@
             // console.log(xUtils.urlParametersToObj(url3));
             // console.log(xUtils.urlParametersToObj(url2));
 
+            let p = new Promise((resolve, reject) => {
+                resolve("ok")
+            })
 
+            console.log("promise", xUtils.isPromise(p));
 
 
 

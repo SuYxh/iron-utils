@@ -1,6 +1,6 @@
 {
   "name": "iron-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "前端-自定义工具函数库",
   "main": "dist/x-utils.js",
   "scripts": {
