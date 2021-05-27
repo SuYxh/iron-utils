@@ -1,7 +1,7 @@
 /*
  * @Author: 时光@
  * @Date: 2021-04-26 14:43:16
- * @LastEditTime: 2021-05-23 22:37:11
+ * @LastEditTime: 2021-05-27 19:11:07
  * @Description:
  */
 
@@ -545,4 +545,59 @@ export const isHasCircle = (obj) => {
   loop(obj)
 
   return hasCircle
+}
+
+
+export const createRequest = (tasks, pool, callback) => {
+  if (typeof pool === "function") {
+    callback = pool;
+    pool = 5;
+  }
+  if (typeof pool !== "number") pool = 5;
+  if (typeof callback !== "function") callback = function () { };
+  //------
+  class TaskQueue {
+    running = 0;
+    queue = [];
+    results = [];
+    pushTask(task) {
+      let self = this;
+      self.queue.push(task);
+      self.next();
+    }
+    next() {
+      let self = this;
+      while (self.running < pool && self.queue.length) {
+        self.running++;
+        let task = self.queue.shift();
+        task().then(result => {
+          self.results.push(result);
+        }).finally(() => {
+          self.running--;
+          self.next();
+        });
+      }
+      if (self.running === 0) callback(self.results);
+    }
+  }
+  let TQ = new TaskQueue;
+  tasks.forEach(task => TQ.pushTask(task));
+}
+
+
+export const groupBy = (array, fn, type = "obj") => {
+  const groups = {};
+  array.forEach((item) => {
+    const group = JSON.stringify(fn(item));
+    //这里利用对象的key值唯一性的，创建数组
+    groups[group] = groups[group] || [];
+    groups[group].push(item);
+  });
+  // console.log(groups);
+  //最后再利用map循环处理分组出来
+  if (type === "obj") {
+    return groups
+  } else {
+    return Object.keys(groups).map((group) => groups[group]);
+  }
 }
