@@ -1,7 +1,7 @@
 /*
  * @Author: 时光@
  * @Date: 2021-04-26 14:43:16
- * @LastEditTime: 2021-05-27 19:11:07
+ * @LastEditTime: 2021-06-05 10:13:07
  * @Description:
  */
 
@@ -601,3 +601,19 @@ export const groupBy = (array, fn, type = "obj") => {
     return Object.keys(groups).map((group) => groups[group]);
   }
 }
+
+
+
+export const escape = (string, options) => {
+  const signs = {
+    "&": "&amp",
+    "<": "&lt",
+    ">": "&gt",
+    '"': "&quot",
+    "'": "&#39",
+  };
+  const signReg = /[&<>"']/g;
+  return string && signReg.test(string)
+    ? string.replace(signReg, (chr) => signs[chr])
+    : string;
+},

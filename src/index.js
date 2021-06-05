@@ -66,7 +66,8 @@ export { bfs } from './data-structure/bfs/index';
 // 工具函数
 export {
     uuid, toType, param2Obj, testMobileType, dealImage, getImgData, checkUrl, getUrlParam, urlParametersToObj, objToUrlString,
-    isFunction, isWindow, isArrayLike, each, merge, transform2Hump, isPromise, arrayEqual, compareObj, isHasCircle, createRequest, groupBy
+    isFunction, isWindow, isArrayLike, each, merge, transform2Hump, isPromise, arrayEqual, compareObj, isHasCircle, createRequest,
+    groupBy, escape
 } from './utils/index'
 
 // 日期处理
