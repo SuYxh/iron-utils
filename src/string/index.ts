@@ -25,7 +25,7 @@ export function reverseStr(str: string = ''):string {
  * console.log(stringifyUrl({ age: 18, name: "jarvis" })); // "?age=18&name=jarvis"
  * ```
  */
-function stringifyUrl<T>(search:T) {
+export function stringifyUrl<T>(search:T) {
   if (JSON.stringify(search) === '{}') {
     return ''
   }
@@ -46,7 +46,7 @@ function stringifyUrl<T>(search:T) {
  * console.log(parseUrlSearch('?age=18&name=jarvis'));  // { age: "18", name: "jarvis" }
  * ```
  */
-function parseUrlSearch(search:string) {
+export function parseUrlSearch(search:string) {
   return search
     .replace(/(^\?)|(&$)/g, '')
     .split('&')

@@ -12,8 +12,11 @@ import {
 import isColor from './color/is-color'
 import rgb2hex from './color/rgb2hex'
 import stairStepAccessTable from './color/stair-step-access-table'
-// 字符串方法
-import { reverseStr } from './string/index'
+// 数字
+import { thousandNum } from './number/index'
+// 字符串
+import { parseUrlSearch, reverseStr, stringifyUrl } from './string/index'
+
 
 const xtools = {
   isColor,
@@ -27,6 +30,9 @@ const xtools = {
   complementForSimpleArray,
   complementForObjArray,
   reverseStr,
+  stringifyUrl,
+  parseUrlSearch,
+  thousandNum,
 }
 
 export {
@@ -41,6 +47,9 @@ export {
   complementForSimpleArray,
   complementForObjArray,
   reverseStr,
+  stringifyUrl,
+  parseUrlSearch,
+  thousandNum,
 }
 
 export default xtools
