@@ -1,6 +1,8 @@
-// 数组 
+// 数组
 import {
-  complementForObjArray, complementForSimpleArray, intersectionForObjArray,
+  complementForObjArray,
+  complementForSimpleArray,
+  intersectionForObjArray,
   intersectionForSimpleArray,
   subtractionForObjArray,
   subtractionForSimpleArray,
@@ -10,10 +12,8 @@ import {
 import isColor from './color/is-color'
 import rgb2hex from './color/rgb2hex'
 import stairStepAccessTable from './color/stair-step-access-table'
-
-
-
-
+// 字符串方法
+import { reverseStr } from './string/index'
 
 const xtools = {
   isColor,
@@ -26,6 +26,7 @@ const xtools = {
   subtractionForObjArray,
   complementForSimpleArray,
   complementForObjArray,
+  reverseStr,
 }
 
 export {
@@ -39,6 +40,7 @@ export {
   subtractionForObjArray,
   complementForSimpleArray,
   complementForObjArray,
+  reverseStr,
 }
 
 export default xtools
