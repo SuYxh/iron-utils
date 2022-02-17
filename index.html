@@ -1,0 +1,473 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>iron-utils</title><meta name="description" content="Documentation for iron-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">iron-utils</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>iron-utils</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#xtools" id="xtools" style="color: inherit; text-decoration: none;">
+  <h1>XTools</h1>
+</a>
+
+<a href="#简介" id="简介" style="color: inherit; text-decoration: none;">
+  <h2>简介</h2>
+</a>
+<p>前端常用工具库，无任何依赖，支持按需引入，收集了以下相关的方法：</p>
+<ul>
+<li>数组</li>
+<li>数字</li>
+<li>字符串</li>
+<li>时间</li>
+<li>浏览器</li>
+<li>颜色</li>
+<li>其他</li>
+</ul>
+
+<a href="#安装" id="安装" style="color: inherit; text-decoration: none;">
+  <h2>安装</h2>
+</a>
+<pre><code class="language-javascript"><span class="hl-7">npm</span><span class="hl-1"> </span><span class="hl-7">i</span><span class="hl-1"> </span><span class="hl-7">iron</span><span class="hl-1">-</span><span class="hl-7">utils</span>
+</code></pre>
+
+<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+  <h2>API</h2>
+</a>
+
+<a href="#数组" id="数组" style="color: inherit; text-decoration: none;">
+  <h3>数组</h3>
+</a>
+
+<a href="#intersectionforsimplearray" id="intersectionforsimplearray" style="color: inherit; text-decoration: none;">
+  <h4>intersectionForSimpleArray</h4>
+</a>
+<p>【说明】：数组交集 普通数组</p>
+<p>【返回】：Array</p>
+<p>【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>string[] || number[]</td>
+<td>普通数组</td>
+</tr>
+<tr>
+<td>arr2</td>
+<td>string[] || number[]</td>
+<td>普通数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">intersectionForSimpleArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [</span><span class="hl-2">1</span><span class="hl-1">, </span><span class="hl-2">2</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">, </span><span class="hl-2">5</span><span class="hl-1"> , </span><span class="hl-2">8</span><span class="hl-1"> ,</span><span class="hl-2">9</span><span class="hl-1">],</span><span class="hl-6">arr2</span><span class="hl-1"> = [</span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">6</span><span class="hl-1">, </span><span class="hl-2">7</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">];</span><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">intersectionForSimpleArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">)) </span><span class="hl-3">//[5, 8, 9]</span>
+</code></pre>
+
+<a href="#intersectionforobjarray" id="intersectionforobjarray" style="color: inherit; text-decoration: none;">
+  <h4>intersectionForObjArray</h4>
+</a>
+<p>【说明】：数组交集 对象数组</p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+<tr>
+<td>Arr2</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">intersectionForObjArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name2&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">2</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name3&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">3</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name5&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> }];</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr2</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name2&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">2</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name3&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">3</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name4&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name5&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> }];</span><br/><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">intersectionForObjArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">))  </span><br/><span class="hl-3">//  [{ name: &#39;name1&#39;, id: 1 },{ name: &#39;name2&#39;, id: 2 },{ name: &#39;name3&#39;, id: 3 },{ name: &#39;name5&#39;, id: 5 }]</span>
+</code></pre>
+
+<a href="#unionforsimplearray" id="unionforsimplearray" style="color: inherit; text-decoration: none;">
+  <h4>unionForSimpleArray</h4>
+</a>
+<p>【说明】：数组并集 普通数组</p>
+<p>【返回】：Array</p>
+<p>【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>string[] || number[]</td>
+<td>普通数组</td>
+</tr>
+<tr>
+<td>arr2</td>
+<td>string[] || number[]</td>
+<td>普通数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">unionForSimpleArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [</span><span class="hl-2">1</span><span class="hl-1">, </span><span class="hl-2">2</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">, </span><span class="hl-2">5</span><span class="hl-1"> , </span><span class="hl-2">8</span><span class="hl-1"> ,</span><span class="hl-2">9</span><span class="hl-1">],</span><span class="hl-6">arr2</span><span class="hl-1"> = [</span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">6</span><span class="hl-1">, </span><span class="hl-2">7</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">];</span><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">unionForSimpleArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">)) </span><span class="hl-3">// [1, 2, 3, 4, 5, 8, 9, 6, 7]</span>
+</code></pre>
+
+<a href="#subtractionforsimplearray" id="subtractionforsimplearray" style="color: inherit; text-decoration: none;">
+  <h4>subtractionForSimpleArray</h4>
+</a>
+<p>【说明】：数组差集 普通数组 数组arr1相对于arr2所没有的</p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>string[] ||number[]</td>
+<td>普通数组</td>
+</tr>
+<tr>
+<td>Arr2</td>
+<td>string[] ||number[]</td>
+<td>普通数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">subtractionForSimpleArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [</span><span class="hl-2">1</span><span class="hl-1">, </span><span class="hl-2">2</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">, </span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">]; </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr2</span><span class="hl-1"> = [</span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">6</span><span class="hl-1">, </span><span class="hl-2">7</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">];</span><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">subtractionForSimpleArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">)) </span><span class="hl-3">// [1, 2, 3, 4 ]</span>
+</code></pre>
+
+<a href="#subtractionforobjarray" id="subtractionforobjarray" style="color: inherit; text-decoration: none;">
+  <h4>subtractionForObjArray</h4>
+</a>
+<p>【说明】：数组差集 对象数组 数组arr1相对于arr2所没有的</p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+<tr>
+<td>Arr2</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">subtractionForObjArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name2&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">2</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name3&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">3</span><span class="hl-1"> }];</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr2</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name4&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name5&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> }];</span><br/><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">subtractionForObjArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">))  </span><br/><span class="hl-3">// [ { name: &#39;name2&#39;, id: 2 }, { name: &#39;name3&#39;, id: 3 } ]</span>
+</code></pre>
+
+<a href="#complementforsimplearray" id="complementforsimplearray" style="color: inherit; text-decoration: none;">
+  <h4>complementForSimpleArray</h4>
+</a>
+<p>【说明】：数组补集 普通数组 两个数组各自没有的集合</p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>string[] ||number[]</td>
+<td>普通数组</td>
+</tr>
+<tr>
+<td>Arr2</td>
+<td>string[] ||number[]</td>
+<td>普通数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">complementForSimpleArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [</span><span class="hl-2">1</span><span class="hl-1">, </span><span class="hl-2">2</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">, </span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">]; </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr2</span><span class="hl-1"> = [</span><span class="hl-2">5</span><span class="hl-1">, </span><span class="hl-2">6</span><span class="hl-1">, </span><span class="hl-2">7</span><span class="hl-1">, </span><span class="hl-2">8</span><span class="hl-1">, </span><span class="hl-2">9</span><span class="hl-1">];</span><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">complementForSimpleArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">)) </span><span class="hl-3">// [1, 2, 3, 4, 6, 7 ]</span>
+</code></pre>
+
+<a href="#complementforobjarray" id="complementforobjarray" style="color: inherit; text-decoration: none;">
+  <h4>complementForObjArray</h4>
+</a>
+<p>【说明】：数组补集 对象数组 两个数组各自没有的集合</p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr1</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+<tr>
+<td>Arr2</td>
+<td>Object[]</td>
+<td>对象数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">complementForObjArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name2&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">2</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name3&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">3</span><span class="hl-1"> }];</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr2</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name4&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name5&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> }];</span><br/><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">complementForObjArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">,</span><span class="hl-7">arr2</span><span class="hl-1">))  </span><br/><span class="hl-3">// [{ name: &#39;name2&#39;, id: 2 },{ name: &#39;name3&#39;, id: 3 },{ name: &#39;name4&#39;, id: 4 },{ name: &#39;name5&#39;, id: 5 }]</span>
+</code></pre>
+
+<a href="#toheavyforsimplearray" id="toheavyforsimplearray" style="color: inherit; text-decoration: none;">
+  <h4>toHeavyForSimpleArray</h4>
+</a>
+<p>【说明】：数组去重 </p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr</td>
+<td>string[] ||number[]</td>
+<td>普通数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">toHeavyForSimpleArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr1</span><span class="hl-1"> = [</span><span class="hl-2">1</span><span class="hl-1">, </span><span class="hl-2">2</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">3</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">, </span><span class="hl-2">4</span><span class="hl-1">];</span><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">toHeavyForSimpleArray</span><span class="hl-1">(</span><span class="hl-7">arr1</span><span class="hl-1">)) </span><span class="hl-3">// [1, 2, 3, 4 ]</span>
+</code></pre>
+
+<a href="#toheavyforobjarray" id="toheavyforobjarray" style="color: inherit; text-decoration: none;">
+  <h4>toHeavyForObjArray</h4>
+</a>
+<p>【说明】：数组去重 </p>
+<p>【返回】：Array
+【参数】</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arr</td>
+<td>Object</td>
+<td>对象数组</td>
+</tr>
+</tbody></table>
+<p>【示例】</p>
+<pre><code class="language-js"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-7">toHeavyForObjArray</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-4">&#39;iron-utils&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">arr</span><span class="hl-1"> = [{ </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name2&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">2</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name3&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">3</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name1&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">1</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name4&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> }, { </span><span class="hl-7">name:</span><span class="hl-1"> </span><span class="hl-4">&#39;name5&#39;</span><span class="hl-1">, </span><span class="hl-7">id:</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> }];</span><br/><br/><span class="hl-7">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-0">toHeavyForObjArray</span><span class="hl-1">(</span><span class="hl-7">arr</span><span class="hl-1">)) </span><br/><span class="hl-3">// [{ name: &#39;name1&#39;, id: 1 },{ name: &#39;name2&#39;, id: 2 },{ name: &#39;name3&#39;, id: 3 },{ name: &#39;name4&#39;, id: 4 },{ name: &#39;name5&#39;, id: 5 }]</span>
+</code></pre>
+
+<a href="#数字" id="数字" style="color: inherit; text-decoration: none;">
+  <h3>数字</h3>
+</a>
+
+<a href="#thousandnum" id="thousandnum" style="color: inherit; text-decoration: none;">
+  <h4>thousandNum</h4>
+</a>
+<p>【说明】：数字千分位 </p>
+
+<a href="#average" id="average" style="color: inherit; text-decoration: none;">
+  <h4>average</h4>
+</a>
+<p>【说明】：<em>获得一组数的平均值</em></p>
+
+<a href="#round" id="round" style="color: inherit; text-decoration: none;">
+  <h4>round</h4>
+</a>
+<p>【说明】：<em>指定位数四舍五入</em></p>
+
+<a href="#getrandomarbitrary" id="getrandomarbitrary" style="color: inherit; text-decoration: none;">
+  <h4>getRandomArbitrary</h4>
+</a>
+<p>【说明】：<em>得到一个两数之间的随机数,返回了一个在指定值之间的随机数。这个值不小于 min（有可能等于），并且小于（不等于）max。</em></p>
+
+<a href="#getrandomint" id="getrandomint" style="color: inherit; text-decoration: none;">
+  <h4>getRandomInt</h4>
+</a>
+<p>【说明】：<em>得到一个两数之间的随机整数,返回了一个在指定值之间的随机整数。这个值不小于 min （如果 min 不是整数，则不小于 min 的向上取整数），且小于（不等于）max。</em></p>
+
+<a href="#getrandomintinclusive" id="getrandomintinclusive" style="color: inherit; text-decoration: none;">
+  <h4>getRandomIntInclusive</h4>
+</a>
+<p>【说明】：<em>得到一个两数之间的随机整数，包括两个数在内</em></p>
+
+<a href="#字符串" id="字符串" style="color: inherit; text-decoration: none;">
+  <h3>字符串</h3>
+</a>
+
+<a href="#reversestr" id="reversestr" style="color: inherit; text-decoration: none;">
+  <h4>reverseStr</h4>
+</a>
+<p>【说明】：<em>字符串翻转</em></p>
+
+<a href="#stringifyurl" id="stringifyurl" style="color: inherit; text-decoration: none;">
+  <h4>stringifyUrl</h4>
+</a>
+<p>【说明】：<em>将对象序列化成url参数</em></p>
+
+<a href="#parseurlsearch" id="parseurlsearch" style="color: inherit; text-decoration: none;">
+  <h4>parseUrlSearch</h4>
+</a>
+<p>【说明】：<em>路由参数反序列化得到对象</em></p>
+
+<a href="#capitalize" id="capitalize" style="color: inherit; text-decoration: none;">
+  <h4>capitalize</h4>
+</a>
+<p>【说明】：<em>字符串首字母大写</em></p>
+
+<a href="#randomstring" id="randomstring" style="color: inherit; text-decoration: none;">
+  <h4>randomString</h4>
+</a>
+<p>【说明】：<em>随机字符串</em></p>
+
+<a href="#truncatestring" id="truncatestring" style="color: inherit; text-decoration: none;">
+  <h4>truncateString</h4>
+</a>
+<p>【说明】：<em>截断字符串</em></p>
+
+<a href="#striphtml" id="striphtml" style="color: inherit; text-decoration: none;">
+  <h4>stripHtml</h4>
+</a>
+<p>【说明】：<em>去除字符串中的HTML元素</em></p>
+
+<a href="#时间" id="时间" style="color: inherit; text-decoration: none;">
+  <h3>时间</h3>
+</a>
+
+<a href="#isdatevalid" id="isdatevalid" style="color: inherit; text-decoration: none;">
+  <h4>isDateValid</h4>
+</a>
+<p>【说明】：<em>检测给出的日期是否有效</em></p>
+
+<a href="#daydif" id="daydif" style="color: inherit; text-decoration: none;">
+  <h4>dayDif</h4>
+</a>
+<p>【说明】：<em>计算两个日期之间的间隔时间</em></p>
+
+<a href="#dayofyear" id="dayofyear" style="color: inherit; text-decoration: none;">
+  <h4>dayOfYear</h4>
+</a>
+<p>【说明】：<em>查找日期位于一年中的第几天</em></p>
+
+<a href="#浏览器" id="浏览器" style="color: inherit; text-decoration: none;">
+  <h3>浏览器</h3>
+</a>
+
+<a href="#copytoclipboard" id="copytoclipboard" style="color: inherit; text-decoration: none;">
+  <h4>copyToClipboard</h4>
+</a>
+<p>【说明】：<em>复制内容到剪切板</em></p>
+
+<a href="#getselectedtext" id="getselectedtext" style="color: inherit; text-decoration: none;">
+  <h4>getSelectedText</h4>
+</a>
+<p>【说明】：<em>获取选中的文本,该方法通过内置的 getSelection 属性获取用户选择的文本</em></p>
+
+<a href="#clearcookies" id="clearcookies" style="color: inherit; text-decoration: none;">
+  <h4>clearCookies</h4>
+</a>
+<p>【说明】：<em>清除所有cookie,该方法可以通过使用 document.cookie 来访问 cookie 并清除存储在网页中的所有 cookie</em></p>
+
+<a href="#scrolltotop" id="scrolltotop" style="color: inherit; text-decoration: none;">
+  <h4>scrollToTop</h4>
+</a>
+<p>【说明】：<em>滚动到页面顶部</em></p>
+
+<a href="#istabinview" id="istabinview" style="color: inherit; text-decoration: none;">
+  <h4>isTabInView</h4>
+</a>
+<p>【说明】：<em>判断当前标签页是否激活</em></p>
+
+<a href="#isappledevice" id="isappledevice" style="color: inherit; text-decoration: none;">
+  <h4>isAppleDevice</h4>
+</a>
+<p>【说明】：<em>判断当前是否是苹果设备</em></p>
+
+<a href="#scrolledtobottom" id="scrolledtobottom" style="color: inherit; text-decoration: none;">
+  <h4>scrolledToBottom</h4>
+</a>
+<p>【说明】：<em>判断页面是否已经底部</em></p>
+
+<a href="#redirect" id="redirect" style="color: inherit; text-decoration: none;">
+  <h4>redirect</h4>
+</a>
+<p>【说明】：<em>重定向到一个URL</em></p>
+
+<a href="#showprintdialog" id="showprintdialog" style="color: inherit; text-decoration: none;">
+  <h4>showPrintDialog</h4>
+</a>
+<p>【说明】：<em>打开浏览器打印框</em></p>
+
+<a href="#颜色" id="颜色" style="color: inherit; text-decoration: none;">
+  <h3>颜色</h3>
+</a>
+
+<a href="#iscolor" id="iscolor" style="color: inherit; text-decoration: none;">
+  <h4>isColor</h4>
+</a>
+<p>【说明】：<em>判断字符串是否是十六进制的颜色值</em></p>
+
+<a href="#rgb2hex" id="rgb2hex" style="color: inherit; text-decoration: none;">
+  <h4>rgb2hex</h4>
+</a>
+<p>【说明】：<em>将RGB转化为十六机制</em></p>
+
+<a href="#randomhex" id="randomhex" style="color: inherit; text-decoration: none;">
+  <h4>randomHex</h4>
+</a>
+<p>【说明】：<em>获取一个随机的十六进制颜色值</em></p>
+
+<a href="#其他" id="其他" style="color: inherit; text-decoration: none;">
+  <h3>其他</h3>
+</a>
+
+<a href="#randomboolean" id="randomboolean" style="color: inherit; text-decoration: none;">
+  <h4>randomBoolean</h4>
+</a>
+<p>【说明】：<em>随机布尔值</em></p>
+
+<a href="#typeofvalue" id="typeofvalue" style="color: inherit; text-decoration: none;">
+  <h4>typeOfValue</h4>
+</a>
+<p>【说明】：<em>判断数据类型</em></p>
+
+<a href="#isemptyobj" id="isemptyobj" style="color: inherit; text-decoration: none;">
+  <h4>isEmptyObj</h4>
+</a>
+<p>【说明】：<em>检测对象是否为空</em></p>
+
+<a href="#celsiustofahrenheit" id="celsiustofahrenheit" style="color: inherit; text-decoration: none;">
+  <h4>celsiusToFahrenheit</h4>
+</a>
+<p>【说明】：<em>摄氏度转华氏度</em></p>
+
+<a href="#fahrenheittocelsius" id="fahrenheittocelsius" style="color: inherit; text-decoration: none;">
+  <h4>fahrenheitToCelsius</h4>
+</a>
+<p>【说明】：<em>华氏度转摄氏度</em></p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-reference"><a href="modules.html#average" class="tsd-kind-icon">average</a></li><li class="tsd-kind-reference"><a href="modules.html#capitalize" class="tsd-kind-icon">capitalize</a></li><li class="tsd-kind-reference"><a href="modules.html#celsiusToFahrenheit" class="tsd-kind-icon">celsius<wbr/>To<wbr/>Fahrenheit</a></li><li class="tsd-kind-reference"><a href="modules.html#clearCookies" class="tsd-kind-icon">clear<wbr/>Cookies</a></li><li class="tsd-kind-reference"><a href="modules.html#complementForObjArray" class="tsd-kind-icon">complement<wbr/>For<wbr/>Obj<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#complementForSimpleArray" class="tsd-kind-icon">complement<wbr/>For<wbr/>Simple<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#copyToClipboard" class="tsd-kind-icon">copy<wbr/>To<wbr/>Clipboard</a></li><li class="tsd-kind-reference"><a href="modules.html#dayDif" class="tsd-kind-icon">day<wbr/>Dif</a></li><li class="tsd-kind-reference"><a href="modules.html#dayOfYear" class="tsd-kind-icon">day<wbr/>Of<wbr/>Year</a></li><li class="tsd-kind-reference"><a href="modules.html#fahrenheitToCelsius" class="tsd-kind-icon">fahrenheit<wbr/>To<wbr/>Celsius</a></li><li class="tsd-kind-reference"><a href="modules.html#getRandomArbitrary" class="tsd-kind-icon">get<wbr/>Random<wbr/>Arbitrary</a></li><li class="tsd-kind-reference"><a href="modules.html#getRandomInt" class="tsd-kind-icon">get<wbr/>Random<wbr/>Int</a></li><li class="tsd-kind-reference"><a href="modules.html#getRandomIntInclusive" class="tsd-kind-icon">get<wbr/>Random<wbr/>Int<wbr/>Inclusive</a></li><li class="tsd-kind-reference"><a href="modules.html#getSelectedText" class="tsd-kind-icon">get<wbr/>Selected<wbr/>Text</a></li><li class="tsd-kind-reference"><a href="modules.html#intersectionForObjArray" class="tsd-kind-icon">intersection<wbr/>For<wbr/>Obj<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#intersectionForSimpleArray" class="tsd-kind-icon">intersection<wbr/>For<wbr/>Simple<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#isAppleDevice" class="tsd-kind-icon">is<wbr/>Apple<wbr/>Device</a></li><li class="tsd-kind-reference"><a href="modules.html#isColor" class="tsd-kind-icon">is<wbr/>Color</a></li><li class="tsd-kind-reference"><a href="modules.html#isDateValid" class="tsd-kind-icon">is<wbr/>Date<wbr/>Valid</a></li><li class="tsd-kind-reference"><a href="modules.html#isEmptyObj" class="tsd-kind-icon">is<wbr/>Empty<wbr/>Obj</a></li><li class="tsd-kind-reference"><a href="modules.html#isEven" class="tsd-kind-icon">is<wbr/>Even</a></li><li class="tsd-kind-reference"><a href="modules.html#isTabInView" class="tsd-kind-icon">is<wbr/>Tab<wbr/>In<wbr/>View</a></li><li class="tsd-kind-reference"><a href="modules.html#parseUrlSearch" class="tsd-kind-icon">parse<wbr/>Url<wbr/>Search</a></li><li class="tsd-kind-reference"><a href="modules.html#randomBoolean" class="tsd-kind-icon">random<wbr/>Boolean</a></li><li class="tsd-kind-reference"><a href="modules.html#randomHex" class="tsd-kind-icon">random<wbr/>Hex</a></li><li class="tsd-kind-reference"><a href="modules.html#randomString" class="tsd-kind-icon">random<wbr/>String</a></li><li class="tsd-kind-reference"><a href="modules.html#redirect" class="tsd-kind-icon">redirect</a></li><li class="tsd-kind-reference"><a href="modules.html#reverseStr" class="tsd-kind-icon">reverse<wbr/>Str</a></li><li class="tsd-kind-reference"><a href="modules.html#rgb2hex" class="tsd-kind-icon">rgb2hex</a></li><li class="tsd-kind-reference"><a href="modules.html#round" class="tsd-kind-icon">round</a></li><li class="tsd-kind-reference"><a href="modules.html#scrollToTop" class="tsd-kind-icon">scroll<wbr/>To<wbr/>Top</a></li><li class="tsd-kind-reference"><a href="modules.html#scrolledToBottom" class="tsd-kind-icon">scrolled<wbr/>To<wbr/>Bottom</a></li><li class="tsd-kind-reference"><a href="modules.html#showPrintDialog" class="tsd-kind-icon">show<wbr/>Print<wbr/>Dialog</a></li><li class="tsd-kind-reference"><a href="modules.html#stringifyUrl" class="tsd-kind-icon">stringify<wbr/>Url</a></li><li class="tsd-kind-reference"><a href="modules.html#stripHtml" class="tsd-kind-icon">strip<wbr/>Html</a></li><li class="tsd-kind-reference"><a href="modules.html#subtractionForObjArray" class="tsd-kind-icon">subtraction<wbr/>For<wbr/>Obj<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#subtractionForSimpleArray" class="tsd-kind-icon">subtraction<wbr/>For<wbr/>Simple<wbr/>Array</a></li><li class="tsd-kind-reference"><a href="modules.html#thousandNum" class="tsd-kind-icon">thousand<wbr/>Num</a></li><li class="tsd-kind-reference"><a href="modules.html#truncateString" class="tsd-kind-icon">truncate<wbr/>String</a></li><li class="tsd-kind-reference"><a href="modules.html#typeOfValue" class="tsd-kind-icon">type<wbr/>Of<wbr/>Value</a></li><li class="tsd-kind-reference"><a href="modules.html#unionForSimpleArray" class="tsd-kind-icon">union<wbr/>For<wbr/>Simple<wbr/>Array</a></li><li class="tsd-kind-variable"><a href="modules.html#default" class="tsd-kind-icon">default</a></li><li class="tsd-kind-function"><a href="modules.html#stairStepAccessTable" class="tsd-kind-icon">stair<wbr/>Step<wbr/>Access<wbr/>Table</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
