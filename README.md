@@ -1,5 +1,7 @@
 # XTools
 
+[![npm version](https://badge.fury.io/js/iron-utils.svg)](https://github.com/SuYxh/iron-utils)[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SuYxh/iron-utils)]()[![pages-build-deployment](https://github.com/SuYxh/iron-utils/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/SuYxh/iron-utils/actions/workflows/pages/pages-build-deployment)[![GitHub last commit](https://img.shields.io/github/last-commit/SuYxh/iron-utils)]()[![GitHub](https://img.shields.io/github/license/SuYxh/iron-utils)]()[![Donate](https://img.shields.io/badge/donate-%E2%99%A5-red.svg)](http://SuYxh.ru/support/)
+
 ## 简介
 
 前端常用工具库，无任何依赖，支持按需引入，收集了以下相关的方法：
