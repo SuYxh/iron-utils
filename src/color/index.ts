@@ -15,6 +15,7 @@ export function isColor(value: string): boolean {
  * @param {number} g
  * @param {number} b
  * @return {*}
+ * @example
  * ```typescript
  * rgb2hex(255, 255, 255);  // '#ffffff'
  * ```
@@ -28,6 +29,7 @@ export function rgb2hex(r: number, g: number, b: number): string {
  * @description: 获取一个随机的十六进制颜色值
  * @param {*}
  * @return {*}
+ * @example
  *```typescript
  * randomHex();  // '#9bb78b'
  * ```

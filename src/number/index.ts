@@ -32,6 +32,7 @@ export function thousandNum(num: number = 0): string {
  * @description: 判断一个数字是奇数还是偶数：
  * @param {number} num
  * @return {*}
+ * @example
  *```typescript
  * isEven(996) // true
  * ```
@@ -45,6 +46,7 @@ export function isEven(num: number) {
  * @description: 获得一组数的平均值
  * @param {array} args
  * @return {*}
+ * @example
  *```typescript
  * average(1, 2, 3, 4, 5);   // 3
  * ```
@@ -61,6 +63,7 @@ export function average(...args) {
  * @param {number} n
  * @param {number} d
  * @return {*}
+ * @example
  *```typescript
  * round(1.005, 2) //1.01
  * round(1.555, 2) //1.56

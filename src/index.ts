@@ -8,6 +8,11 @@ import {
   subtractionForSimpleArray,
   unionForSimpleArray
 } from './array/index'
+// 浏览器方法
+import {
+  clearCookies, copyToClipboard,
+  getSelectedText, isAppleDevice, isTabInView, redirect, scrolledToBottom, scrollToTop, showPrintDialog
+} from './browser/index'
 // 颜色
 import { isColor, randomHex, rgb2hex } from './color/index'
 import stairStepAccessTable from './color/stair-step-access-table'
@@ -33,6 +38,8 @@ import {
   stripHtml,
   truncateString
 } from './string/index'
+
+
 
 const xtools = {
   isColor,
@@ -63,6 +70,15 @@ const xtools = {
   isDateValid,
   dayDif,
   dayOfYear,
+  copyToClipboard,
+  getSelectedText,
+  clearCookies,
+  scrollToTop,
+  isTabInView,
+  isAppleDevice,
+  scrolledToBottom,
+  redirect,
+  showPrintDialog,
 }
 
 export {
@@ -94,6 +110,15 @@ export {
   isDateValid,
   dayDif,
   dayOfYear,
+  copyToClipboard,
+  getSelectedText,
+  clearCookies,
+  scrollToTop,
+  isTabInView,
+  isAppleDevice,
+  scrolledToBottom,
+  redirect,
+  showPrintDialog,
 }
 
 export default xtools
