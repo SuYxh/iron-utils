@@ -12,10 +12,14 @@ import {
 import isColor from './color/is-color'
 import rgb2hex from './color/rgb2hex'
 import stairStepAccessTable from './color/stair-step-access-table'
+// 日期
+import { dayDif, dayOfYear, isDateValid } from './date/index'
 // 数字
 import { thousandNum } from './number/index'
 // 字符串
 import { parseUrlSearch, reverseStr, stringifyUrl } from './string/index'
+
+
 
 
 const xtools = {
@@ -33,6 +37,9 @@ const xtools = {
   stringifyUrl,
   parseUrlSearch,
   thousandNum,
+  isDateValid,
+  dayDif,
+  dayOfYear,
 }
 
 export {
@@ -50,6 +57,9 @@ export {
   stringifyUrl,
   parseUrlSearch,
   thousandNum,
+  isDateValid,
+  dayDif,
+  dayOfYear,
 }
 
 export default xtools
