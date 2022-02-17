@@ -10,8 +10,15 @@ import {
 } from './array/index'
 // 浏览器方法
 import {
-  clearCookies, copyToClipboard,
-  getSelectedText, isAppleDevice, isTabInView, redirect, scrolledToBottom, scrollToTop, showPrintDialog
+  clearCookies,
+  copyToClipboard,
+  getSelectedText,
+  isAppleDevice,
+  isTabInView,
+  redirect,
+  scrolledToBottom,
+  scrollToTop,
+  showPrintDialog
 } from './browser/index'
 // 颜色
 import { isColor, randomHex, rgb2hex } from './color/index'
@@ -28,6 +35,13 @@ import {
   round,
   thousandNum
 } from './number/index'
+import {
+  celsiusToFahrenheit,
+  fahrenheitToCelsius,
+  isEmptyObj,
+  randomBoolean,
+  typeOfValue
+} from './other/index'
 // 字符串
 import {
   capitalize,
@@ -38,8 +52,6 @@ import {
   stripHtml,
   truncateString
 } from './string/index'
-
-
 
 const xtools = {
   isColor,
@@ -79,6 +91,11 @@ const xtools = {
   scrolledToBottom,
   redirect,
   showPrintDialog,
+  randomBoolean,
+  typeOfValue,
+  isEmptyObj,
+  celsiusToFahrenheit,
+  fahrenheitToCelsius,
 }
 
 export {
@@ -119,6 +136,11 @@ export {
   scrolledToBottom,
   redirect,
   showPrintDialog,
+  randomBoolean,
+  typeOfValue,
+  isEmptyObj,
+  celsiusToFahrenheit,
+  fahrenheitToCelsius,
 }
 
 export default xtools
