@@ -17,7 +17,18 @@
     "url": "git+https://github.com/SuYxh/iron-utils.git"
   },
   "keywords": [
-    "tools",
+    "TypeScript",
+    "Browser utils",
+    "Cookie utils",
+    "Document utils",
+    "DOM utils",
+    "Window utils",
+    "array",
+    "collection",
+    "function",
+    "object",
+    "string",
+    "util",
     "utils"
   ],
   "author": "Jarvis",
