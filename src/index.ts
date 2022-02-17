@@ -9,28 +9,35 @@ import {
   unionForSimpleArray
 } from './array/index'
 // 颜色
-import isColor from './color/is-color'
-import rgb2hex from './color/rgb2hex'
+import { isColor, randomHex, rgb2hex } from './color/index'
 import stairStepAccessTable from './color/stair-step-access-table'
 // 日期
 import { dayDif, dayOfYear, isDateValid } from './date/index'
 // 数字
-import { thousandNum } from './number/index'
+import {
+  average,
+  getRandomArbitrary,
+  getRandomInt,
+  getRandomIntInclusive,
+  isEven,
+  round,
+  thousandNum
+} from './number/index'
 // 字符串
 import {
   capitalize,
   parseUrlSearch,
   randomString,
   reverseStr,
-  stringifyUrl, stripHtml, truncateString
+  stringifyUrl,
+  stripHtml,
+  truncateString
 } from './string/index'
-
-
-
 
 const xtools = {
   isColor,
   rgb2hex,
+  randomHex,
   stairStepAccessTable,
   intersectionForSimpleArray,
   intersectionForObjArray,
@@ -47,6 +54,12 @@ const xtools = {
   stripHtml,
   parseUrlSearch,
   thousandNum,
+  isEven,
+  average,
+  round,
+  getRandomArbitrary,
+  getRandomInt,
+  getRandomIntInclusive,
   isDateValid,
   dayDif,
   dayOfYear,
@@ -55,6 +68,7 @@ const xtools = {
 export {
   isColor,
   rgb2hex,
+  randomHex,
   stairStepAccessTable,
   intersectionForSimpleArray,
   intersectionForObjArray,
@@ -71,6 +85,12 @@ export {
   stripHtml,
   parseUrlSearch,
   thousandNum,
+  isEven,
+  average,
+  round,
+  getRandomArbitrary,
+  getRandomInt,
+  getRandomIntInclusive,
   isDateValid,
   dayDif,
   dayOfYear,
