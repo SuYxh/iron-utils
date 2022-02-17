@@ -29,7 +29,7 @@ export function thousandNum(num: number = 0): string {
 
 /**
  * @author: 时光@
- * @description: 判断一个数字是奇数还是偶数：
+ * @description: 判断一个数字是奇数还是偶数
  * @param {number} num
  * @return {*}
  * @example

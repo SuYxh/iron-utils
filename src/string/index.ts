@@ -108,7 +108,7 @@ export function truncateString(string:string, length:number) {
 
 /**
  * @author: 时光@
- * @description: 去除字符串中的HTML元素：
+ * @description: 去除字符串中的HTML元素
  * @param {string} html
  * @return {*}
  */

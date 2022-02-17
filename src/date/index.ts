@@ -1,6 +1,6 @@
 /**
  * @author: 时光@
- * @description: 检测给出的日期是否有效：
+ * @description: 检测给出的日期是否有效
  * @param {string} date
  * @return {*}
  * ```typescript
