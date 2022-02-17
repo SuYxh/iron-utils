@@ -14,6 +14,8 @@
 
 
 
+文档地址(文档由[typedoc](https://www.npmjs.com/package/typedoc)生成)：https://suyxh.github.io/iron-utils/ 
+
 ## 安装
 
 ``` javascript
