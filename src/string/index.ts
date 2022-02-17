@@ -13,6 +13,8 @@
 export function reverseStr(str: string = ''):string {
   return str.split('').reduceRight((t, v) => t + v)
 }
+// 另一种实现
+// const reverse = str => str.split('').reverse().join('');
 
 
 /**
@@ -58,3 +60,62 @@ export function parseUrlSearch(search:string) {
 }
 
 
+/**
+ * @author: 时光@
+ * @description: 字符串首字母大写
+ * @param {string} str
+ * @return {*}
+ * ```typescript
+ * capitalize("hello world")  // Hello world
+ * ```
+ */
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+
+
+/**
+ * @author: 时光@
+ * @description: 随机字符串
+ * @param {*}
+ * @return {*}
+ *```typescript
+ * randomString() // msp22a5pm8q
+ * ```
+ */
+export function randomString() {
+  return Math.random().toString(36).slice(2)
+}
+
+
+
+
+/**
+ * @author: 时光@
+ * @description:  截断字符串
+ * @param {string} string
+ * @param {number} length
+ * @return {*}
+ *```typescript
+ * truncateString('Hi, I should be truncated because I am too loooong!', 36)   // 'Hi, I should be truncated because...'
+ * ```
+ */
+export function truncateString(string:string, length:number) {
+  return string.length < length ? string : `${string.slice(0, length - 3)}...`
+}
+
+
+/**
+ * @author: 时光@
+ * @description: 去除字符串中的HTML元素：
+ * @param {string} html
+ * @return {*}
+ */
+export function stripHtml(html: string) {
+  return new DOMParser().parseFromString(html, 'text/html').body.textContent || ''
+}
+
+
+
+  

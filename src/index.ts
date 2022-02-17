@@ -17,7 +17,13 @@ import { dayDif, dayOfYear, isDateValid } from './date/index'
 // 数字
 import { thousandNum } from './number/index'
 // 字符串
-import { parseUrlSearch, reverseStr, stringifyUrl } from './string/index'
+import {
+  capitalize,
+  parseUrlSearch,
+  randomString,
+  reverseStr,
+  stringifyUrl, stripHtml, truncateString
+} from './string/index'
 
 
 
@@ -35,6 +41,10 @@ const xtools = {
   complementForObjArray,
   reverseStr,
   stringifyUrl,
+  capitalize,
+  randomString,
+  truncateString,
+  stripHtml,
   parseUrlSearch,
   thousandNum,
   isDateValid,
@@ -55,6 +65,10 @@ export {
   complementForObjArray,
   reverseStr,
   stringifyUrl,
+  capitalize,
+  randomString,
+  truncateString,
+  stripHtml,
   parseUrlSearch,
   thousandNum,
   isDateValid,
